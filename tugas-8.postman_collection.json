@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "05fee1a6-c6eb-49b3-aff9-8a1b9cbc6ca4",
+		"name": "tugas-8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29397295"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"\",\r\n    \"email\": \"baykyshi.com\",\r\n    \"password\": \"Pas!@#$$@%s\",\r\n    \"bio\": \"Backend Developer @SkyshiDigitalIndonesia\",\r\n    \"dob\": \"1997dd-06-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1945/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "1945",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:1945/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "1945",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1945/users/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "1945",
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
