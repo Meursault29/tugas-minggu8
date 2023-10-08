@@ -6,7 +6,14 @@ const checkValidasi = [
         .notEmpty().withMessage("wajib diisi"),
     body("email")
         .notEmpty().withMessage("wajib diisi")
-        .isEmail().withMessage("format harus benar"),
+        .isEmail().withMessage("format harus benar")
+        .custom((value) => {
+            const existingUser = user.find((item) => item.email === value);
+            if (existingUser) {
+                throw new Error("Email sudah digunakan");
+            }
+            return true;
+        }),
     body("password")
         .notEmpty().withMessage("wajib diisi")
         .isLength({min: 8}).withMessage("minimal 8 karakter")
